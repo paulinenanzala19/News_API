@@ -1,8 +1,36 @@
-<!-- <h1>Hello world</h1> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>health news</h3>
+  <ul>
+    {% for item_news in health %}
+      <img src="{{item_news.urlToImage}}" alt="">
+      <li>{{item_news.title}}</li>
+      <p>{{item_news.description}}</p>
+    {% endfor %}
+  </ul>
 
-<h3>health news</h3>
+  <h3>Sports News</h3>
+  <ul>
+    {% for item_news in sports %}
+      <li>{{item_news.title}}</li>
+      <p>{{item_news.description}}</p>
+    {% endfor%}
+  </ul>
+  
+</body>
+</html>
+
+<!-- <h3>health news</h3>
 <ul>
     {% for item_news in health %}
+      <img src="{{item_news.urlImage}}" alt="">
       <li>{{item_news.title}}</li>
       <p>{{item_news.description}}</p>
     {% endfor %}
@@ -14,4 +42,4 @@
     <li>{{item_news.title}}</li>
     <p>{{item_news.description}}</p>
   {% endfor%}
-</ul>
+</ul> -->

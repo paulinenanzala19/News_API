@@ -1,6 +1,7 @@
 from flask import render_template
 from app import News
-from .request import get_news
+from .request import get_news,get_source
+
 
 
 
