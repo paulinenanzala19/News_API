@@ -10,5 +10,5 @@ class Article:
         self.time=time
         self.url=url
         self.author=author
-        pass
+       
     
