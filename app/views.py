@@ -11,4 +11,10 @@ def index():
     sport_news=get_news('sports')
     breaking_news=get_news('breaking')
     entertainment_news=get_news('entertainment')
-    return render_template('index.html', health=health_news,sports=sport_news,breaking=breaking_news,entertainment=entertainment_news)
+    return render_template('index.html', health=health_news,sports=sport_news,
+    breaking=breaking_news,entertainment=entertainment_news)
+
+@News.route('/article/<name>')
+def article(name):
+    article=get_article(name)
+    return render_template('news.html', article=article)
