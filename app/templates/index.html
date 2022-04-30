@@ -1,1 +1,9 @@
-<h1>Hello world</h1>
+<!-- <h1>Hello world</h1> -->
+
+<h3>health news</h3>
+<ul>
+    {% for item_news in health %}
+      <li>{{item_news.title}}</li>
+      <p>{{item_news.description}}</p>
+    {% endfor %}
+</ul>
