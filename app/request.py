@@ -37,14 +37,15 @@ def process_results(news_list):
         author=item.get('author')
         url=item.get('url')
         urlToImage=item.get('urlToImage')
+        publishedAt=item.get('publishedAt')
 
         if description:
-            news_object=Article(id,title,description,url,author,urlToImage)
+            news_object=Article(id,title,description,url,author,urlToImage,publishedAt)
             news_results.append(news_object)
 
     return news_results
 
-def get_source(id):
+def get_source():
     get_source_url=source_url.format(id,api_key)
 
     with urllib.request.urlopen(get_source_url)as url:
@@ -73,3 +74,27 @@ def output_results(source_list):
             source_results.append(source_object)
 
     return source_results
+
+def get_category(cat_name):
+    '''
+    function that gets the response to the category json
+    '''
+    get_category_url = base_url.format(cat_name,api_key)
+    print(get_category_url)
+    with urllib.request.urlopen(get_category_url) as url:
+        get_category_data = url.read()
+        get_cartegory_response = json.loads(get_category_data)
+
+        get_cartegory_results = None
+
+        if get_cartegory_response['articles']:
+            get_cartegory_list = get_cartegory_response['articles']
+            get_cartegory_results = process_results(get_cartegory_list)
+
+    return get_cartegory_results   
+
+# def category(cat_name):
+#     """
+#     Function that gets response from the json
+
+#     """

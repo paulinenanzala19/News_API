@@ -2,12 +2,9 @@
 {% import 'macros.html' as macro%}
 
 {% block content %}
-  <h3>Trending news</h3>
-    <ul>
-      {{macro.displayNewsList(article)}}
-    </ul>
+  
 
-  <h3>health news</h3>
+  <h3 style="text-align:center">health news</h3>
   <ul>
     {{macro.displayNewsList(health)}}
   </ul>
@@ -20,11 +17,15 @@
 
   <h3>Entertainment News</h3>
   <ul>
+   
     {{macro.displayNewsList(entertainment)}}
   </ul>
   
 
 {% endblock %}
+
+
+  
   
 
 

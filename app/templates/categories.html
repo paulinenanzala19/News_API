@@ -1,0 +1,31 @@
+{% extends 'base.html'%}  
+{% block content %}
+<br>
+<br>
+
+<body>
+  
+  <h1 style="text-align:center;" class="text-uppercase">{{cat}} NEWS </h3>
+    <div class="container p-3 w-100" style="overflow-x: hidden;">
+      <div class="card-columns">
+        {% for category in category %}
+
+        <div class="card">
+          <img class="card" src="{{category.urlToImage}}" alt="Card image cap" size="100px180">
+          <div class="card-body">
+            <h5 class="card-title">{{category.author}}</h5>
+            <p class="card-text">{{category.description}}</p>
+            <a href="{{category.url}}">
+                <button>Read more</button>
+              <!-- <p class="card-text">Click here for more details!</p> -->
+            </a>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Publish date: {{category.publishedAt}}</small>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endblock %}
+  </body>
