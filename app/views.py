@@ -10,12 +10,11 @@ def index():
     """
 
     """
-   
-    health_news=get_news('health')
-    sport_news=get_news('sports')
-    entertainment_news=get_news('entertainment')
-    return render_template('index.html', health=health_news,sports=sport_news,
-    entertainment=entertainment_news)
+    general_news=get_news('general')
+    # health_news=get_news('health')
+    # sport_news=get_news('sports')
+    # entertainment_news=get_news('entertainment')
+    return render_template('index.html',general=general_news)
 
 
 @News.route('/categories/<cate_name>')

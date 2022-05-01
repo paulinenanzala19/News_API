@@ -80,7 +80,7 @@ def get_category(cate_name):
     Function that gets the response 
     '''
     get_category_url = base_url.format(cate_name,api_key)
-    print(get_category_url)
+    # print(get_category_url)
     with urllib.request.urlopen(get_category_url) as url:
         get_category_data = url.read()
         get_category_response = json.loads(get_category_data)
