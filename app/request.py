@@ -75,23 +75,23 @@ def output_results(source_list):
 
     return source_results
 
-def get_category(cat_name):
+def get_category(cate_name):
     '''
-    function that gets the response to the category json
+    Function that gets the response 
     '''
-    get_category_url = base_url.format(cat_name,api_key)
+    get_category_url = base_url.format(cate_name,api_key)
     print(get_category_url)
     with urllib.request.urlopen(get_category_url) as url:
         get_category_data = url.read()
-        get_cartegory_response = json.loads(get_category_data)
+        get_category_response = json.loads(get_category_data)
 
-        get_cartegory_results = None
+        get_category_results = None
 
-        if get_cartegory_response['articles']:
-            get_cartegory_list = get_cartegory_response['articles']
-            get_cartegory_results = process_results(get_cartegory_list)
+        if get_category_response['articles']:
+            get_category_list = get_category_response['articles']
+            get_category_results = process_results(get_category_list)
 
-    return get_cartegory_results   
+    return get_category_results   
 
 # def category(cat_name):
 #     """

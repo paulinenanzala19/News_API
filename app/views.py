@@ -18,14 +18,14 @@ def index():
     entertainment=entertainment_news)
 
 
-@News.route('/categories/<cat_name>')
-def category(cat_name):
+@News.route('/categories/<cate_name>')
+def category(cate_name):
     '''
     function to return the categories.html page and its content
     '''
-    category = get_category(cat_name)
-    title = f'{cat_name}'
-    cat = cat_name
+    category = get_category(cate_name)
+    title = f'{cate_name}'
+    cate = cate_name
 
-    return render_template('categories.html',title = title,category = category, cat= cat_name)
+    return render_template('categories.html',title = title,category = category, cate= cate_name)
 
