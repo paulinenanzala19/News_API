@@ -1,11 +1,11 @@
 from flask import render_template
-from app import News
-from .request import get_news,get_source,get_category
+from .import main
+from app.request import get_news,get_source,get_category
 
 
 
 
-@News.route('/')
+@main.route('/')
 def index():
     """
 
@@ -17,7 +17,7 @@ def index():
     return render_template('index.html',general=general_news)
 
 
-@News.route('/categories/<cate_name>')
+@main.route('/categories/<cate_name>')
 def category(cate_name):
     '''
     function to return the categories.html page and its content

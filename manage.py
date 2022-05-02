@@ -1,4 +1,6 @@
-from app import News
+from app import create_app
+app=create_app(producti)
+
 
 if __name__=='__main__':
-    News.run()
+    app.run()
