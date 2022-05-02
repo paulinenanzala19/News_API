@@ -79,6 +79,9 @@ As a user I would like to:
 * Python3.8
 * Flask
 
+## live link
+['https://nanzalahub.herokuapp.com/']
+
 ## known bugs
 Not any at the moment but am open to suggestion
 
