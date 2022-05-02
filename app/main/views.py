@@ -1,5 +1,6 @@
 from flask import render_template
 from .import main
+from app.models import Article,Category
 from app.request import get_news,get_source,get_category
 
 

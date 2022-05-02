@@ -1,21 +1,37 @@
-from app import News
+# from app import app
 import urllib.request,json
-from .models import articles,source
+from .models import *
 
-Article=articles.Article
-Source=source.Source
 
-api_key=News.config['NEWS_API_KEY']
+# Article=models.Article
+# Source=models.Source
 
-base_url=News.config['NEWS_API_BASE_URL']
+# api_key=app.config['NEWS_API_KEY']
 
-source_url=News.config['NEWS_API_SOURCE_URL']
+# base_url=app.config['NEWS_API_BASE_URL']
 
+# source_url=app.config['NEWS_API_SOURCE_URL']
+api_key = None
+base_url = None
+
+
+def configure_request(app):
+    global api_key, base_url
+    api_key=app.config['NEWS_API_KEY']
+
+    base_url=app.config['NEWS_API_BASE_URL'] 
+
+    source_url=app.config['NEWS_API_SOURCE_URL']
+
+    pass
+
+    
 def get_news(category):
 
     get_news_url=base_url.format(category,api_key)
+    print(get_news_url)
 
-    with urllib.request.urlopen(get_news_url)as url:
+    with urllib.request.urlopen(get_news_url) as url:
         get_article_data=url.read()
         get_news_response=json.loads(get_article_data)#convert to python dictionary
 
@@ -93,8 +109,3 @@ def get_category(cate_name):
 
     return get_category_results   
 
-# def category(cat_name):
-#     """
-#     Function that gets response from the json
-
-#     """
