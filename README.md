@@ -1,5 +1,6 @@
 ## News Hub
 
+
 ## Author
 Pauline Wafula
 
@@ -24,7 +25,7 @@ As a user I would like to:
 | Display tabs with news by category and sources | **On Tab Dropdownlink click** | Clickable links to open news based on category and sources |
 | Display articles from a  source | **Click a news source** | Redirected to a page with articles from the source |
 | Display the articles of a category | **On page load** | Each article displays an image,description and publication date of the specified category|
-| To Read an entire article  | **Click an go to article** | Redirected to the  source's site to read the entire article |
+| To Read an entire article  | **Click a go to article button** | Redirected to the  source's site to read the entire article |
 
 
 ## SetUp / Installation Requirements
@@ -61,9 +62,10 @@ As a user I would like to:
         * Insert the following info into it:
 
                 export NEWS_API_KEY='<Your-Api-Key>'
+                export SECRET_KEY='<Your-secret-key>
                 python3.8 manage.py server
 
-        * Replace <Your-Api-Key> with your api key
+        * Replace <Your-Api-Key> with your api key and <Your-secret-key> with your secret key
 
 * To run the application, in your terminal:
 
@@ -78,6 +80,8 @@ As a user I would like to:
 ## Technologies Used
 * Python3.8
 * Flask
+* HTML
+* CSS(Bootstrap)
 
 ## live link
 ['https://nanzalahub.herokuapp.com/']
